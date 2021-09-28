@@ -13,4 +13,6 @@ int main() {
   char r3 = (rnd() % 2 ? 'a' : 'A') + rnd() % 26;
 
   cout << r1 << " " << r2 << " " << r3 << endl;
+
+  return 0;
 }
