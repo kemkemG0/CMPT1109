@@ -2,9 +2,7 @@
 using namespace std;
 
 int main() {
-  cout << "Put 6 numbers a,b,c,d,e and f to make to solve this below." << endl;
-  cout << "ax + by = e" << endl;
-  cout << "cx + dy = f" << endl;
+  cout << "Enter a, b, c, d, e, f:";
   double a, b, c, d, e, f;
   cin >> a >> b >> c >> d >> e >> f;
   double denom = a * d - b * c;
