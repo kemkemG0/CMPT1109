@@ -6,8 +6,7 @@
 ** x2 = (-b - squareRoot(b^2 - 4ac)) / 2a
 */
 
-
-using namespace std
+using namespace std;
 int main() {
 	double a = 2, b = 4, c = 2;
 	int x1, x2;
@@ -19,5 +18,5 @@ int main() {
 	cout << "x1 = " << x1 << "\n"; 
 	cout << "x2 = " << x2 << "\n"; 
 	cout << "Delta is " << delta << "\n";
-	return ;
+	return 0;
 } 
