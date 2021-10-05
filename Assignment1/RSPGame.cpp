@@ -10,6 +10,7 @@ string hands[3]={"rock","scissor","paper"};
 
 int main() {
     // init vars
+    srand(time(NULL));
     int user=0;
     int enem = rand()%3;
     // user input
