@@ -28,6 +28,6 @@ int main() {
         return 0;
     }
     // Lost
-    cout<<". You lost !"<<endl;
+    cout<<". Computer won!"<<endl;
     return 0;
 }
