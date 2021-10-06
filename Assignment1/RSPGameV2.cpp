@@ -7,7 +7,9 @@ using namespace std;
 const int R = 0;
 const int S = 1;
 const int P = 2;
-string hands[3]={"rock","scissor","paper"};
+
+//instead of using this, I used Ternary operator
+// string hands[3]={"rock","scissor","paper"};
 
 int main(){
     int user=0,win_diff=0;// win_diff:= user_win - enem_win
@@ -22,7 +24,7 @@ int main(){
         cout << "Round " << round << " :Select rock (0), scissor (1), or paper (2): ";
         cin>>user;
         // common output
-        out_log = "The computer is "+ hands[enem] +". You are "+ hands[user];
+        out_log = "The computer is "+ string(enem==0?"rock":(enem==1)?"scissor":"paper")  +". You are "+ string(user==0?"rock":(user==1)?"scissor":"paper");
         // Draw
         if(user==enem){
             out_log+=" too. It is a draw.\n";
