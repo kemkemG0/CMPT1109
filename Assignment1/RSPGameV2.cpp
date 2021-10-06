@@ -17,9 +17,9 @@ int main(){
     ofstream output;
     output.open("RSPGameV2.log");
 
-    for (int game_num = 1;; game_num++){
+    for (int round = 1;; round++){
         int enem = rand()%3;
-        cout << "Round " << game_num << " :Select rock (0), scissor (1), or paper (2): ";
+        cout << "Round " << round << " :Select rock (0), scissor (1), or paper (2): ";
         cin>>user;
         // common output
         out_log = "The computer is "+ hands[enem] +". You are "+ hands[user];
@@ -40,10 +40,10 @@ int main(){
         cout << out_log << endl;
         output << out_log;
         
-        if (game_num>5 && (user_won>2 || enem_won>2)) break;      
+        if (round>5 && (user_won>2 || enem_won>2)) break;      
     }
     // last output
-    out_log = "Game Over! "+ string((user_won>2) ? "Computer is" : "You are") +" the winner! Try again!\n";
+    out_log = "Game Over! "+ string((user_won>2) ? "You are" : "Computer is") +" the winner! Try again!\n";
     cout << out_log << endl;
     output << endl << endl << out_log;
     output.close();
