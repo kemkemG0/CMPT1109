@@ -10,7 +10,7 @@ const int P = 2;
 string hands[3]={"rock","scissor","paper"};
 
 int main(){
-    int user=0,user_won=0,enem_won=0;
+    int user=0,win_diff=0;// win_diff:= user_win - enem_win
     string out_log="";
     srand(time(NULL));
     
@@ -30,22 +30,23 @@ int main(){
         // Won
         else if((user==R && enem==S) || (user==S && enem==P) || (user==P && enem==R)){
             out_log+=". You won !\n";
-            user_won++;
+            win_diff++;
         }
         // Lost
         else{
             out_log+=". Computer won!\n";
-            enem_won++;
+            win_diff--;
         }
         cout << out_log << endl;
+        out_log = "Round " + to_string(round) + " : " + out_log;
         output << out_log;
-        
-        if (round>5 && (user_won>2 || enem_won>2)) break;      
+
+        if (round>5 && abs(win_diff)>2) break;      
     }
     // last output
-    out_log = "Game Over! "+ string((user_won>2) ? "You are" : "Computer is") +" the winner! Try again!\n";
+    out_log = "Game Over! "+ string(win_diff>0 ? "You are" : "Computer is") +" the winner! Try again!\n";
     cout << out_log << endl;
-    output << endl << endl << out_log;
+    output << "\n\n" << out_log;
     output.close();
     return 0;
 }
