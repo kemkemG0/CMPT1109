@@ -31,18 +31,18 @@ int main(){
     }
 
     // common output
-    cout << "\nItem   " << "Price   " << "Tax Rate%   " << "Item Price" << endl;
-    cout << "=====================================" << endl;
+    cout << "\nItem     " << "Price     " << "Tax Rate%     " << "Item Price" << endl;
+    cout << "===========================================" << endl;
     
     string value = "";
     stringstream ss{values_list_str};
     int cnt = 0;// takes [0-3]
     while(getline(ss, value, ' ')){
         // output each columns with nice format
-        if(cnt==0)cout << right << setw(2) << value;
-        if(cnt==1)cout << right << setw(12) << fixed << setprecision(2) << stod(value);
-        if(cnt==2)cout << right << setw(9) << stoi(value) << "%";
-        if(cnt==3)cout << right << setw(13) << stod(value) << endl;
+        if(cnt==0) cout << right << setw(4) << value;
+        if(cnt==1) cout << right << setw(10) << fixed << setprecision(2) << stod(value);
+        if(cnt==2) cout << right << setw(13) << stoi(value) << "%";
+        if(cnt==3) cout << right << setw(15) << stod(value) << endl;
 
         cnt = (cnt+1)%4;
     }
