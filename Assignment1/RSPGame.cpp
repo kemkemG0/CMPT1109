@@ -6,6 +6,7 @@ using namespace std;
 const int R = 0;
 const int S = 1;
 const int P = 2;
+//instead of using this, I used Ternary operator
 // string hands[3]={"rock","scissor","paper"};
 
 int main() {

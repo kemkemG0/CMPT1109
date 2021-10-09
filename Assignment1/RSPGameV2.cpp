@@ -39,10 +39,12 @@ int main(){
             out_log+=". Computer won!\n";
             win_diff--;
         }
+        //output to both terminal and file
         cout << out_log << endl;
         out_log = "Round " + to_string(round) + " : " + out_log;
         output << out_log;
 
+        //break the loop
         if (round>5 && abs(win_diff)>2) break;      
     }
     // last output
@@ -50,5 +52,6 @@ int main(){
     cout << out_log << endl;
     output << "\n\n" << out_log;
     output.close();
+    
     return 0;
 }
