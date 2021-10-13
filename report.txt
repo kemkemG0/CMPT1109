@@ -1,0 +1,4 @@
+The random number is 60517
+2 even digits.
+3 odd digits.
+The sum of odd digits, 5 1 7 , and sum of even digits, 6 0 ,are NOT equal
