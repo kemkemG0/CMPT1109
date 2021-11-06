@@ -18,7 +18,7 @@ int getSumForValidation(const char str[], int size){
     return ret;
 }
 bool isCardValid(int sum){return !(bool(sum%10));}
-bool isLengthValid(int size){return (13 > size || size>16);}
+bool isLengthValid(int size){return (13 <= size && size<=16);}
 
 int main(){
     // Init var and get user input
