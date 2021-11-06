@@ -33,6 +33,6 @@ int main(){
     int sum = getSumForValidation(str,strlen(str));
     // Output answer
     if(isCardValid(sum)) cout<< "This Card is Valid." << endl;
-    else cout<<"!!This is Card is INVALID.!!" << endl;
+    else cout<<"!!This Card is INVALID.!!" << endl;
     return 0;
 }
