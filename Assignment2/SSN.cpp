@@ -28,6 +28,7 @@ int main(){
     // Validate length
     if(!isLengthValid(strlen(str))){
         cout<<"Invalid Length"<<endl;
+        return 0;
     }
     int sum = getSumForValidation(str,strlen(str));
     // Output answer
