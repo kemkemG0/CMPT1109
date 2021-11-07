@@ -23,6 +23,7 @@ bool isLengthValid(int size){return (13 <= size && size<=16);}
 int main(){
     // Init var and get user input
     char str[MAX_SIZE];
+    cout<<"Input Credit Card Number: ";
     cin.getline(str,MAX_SIZE);
 
     // Validate length
