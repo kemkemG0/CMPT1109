@@ -40,6 +40,11 @@ int findSize(string filename){
 }
 
 float findAverage(string filename, int size){
+    // check size is not zero
+    if(!size){
+        cout<<"Invalid size"<<endl;
+        return -1;
+    }
     // init vars
     ifstream file;
     float line = 0, sum = 0;
@@ -54,6 +59,12 @@ float findAverage(string filename, int size){
 }
 
 float findSD(string filename, int size, float avg){
+    // check size is not zero
+    if(!size){
+        cout<<"Invalid size"<<endl;
+        return -1;
+    }
+
     float sum = 0,line = 0;
     ifstream file;
 
