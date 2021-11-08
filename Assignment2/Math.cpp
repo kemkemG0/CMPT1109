@@ -1,17 +1,25 @@
 #include<iostream>
 #include<fstream>
 #include<cmath>
+#include<sstream>
+
 using namespace std;
 
 //func proytypes
 int findSize(string filename);
 float findAverage(string filename, int size);
 float findSD(string filename, int size, float avg);
+void prettyPrint(int size, float avg, float SD);
 
 int main(){
     string filename;
-    cin>>filename;
-    cout<< findAverage(filename,findSize(filename))<<endl;
+    cin >> filename;
+    int size = findSize(filename);
+    float avg = findAverage(filename,size);
+    float SD = findSD(filename,size,avg);
+    
+    prettyPrint(size,avg,SD);
+    
     return 0;
 }
 
@@ -56,4 +64,13 @@ float findSD(string filename, int size, float avg){
 
     //return SD
     return sqrt(sum/size);
+}
+
+void prettyPrint(int size, float avg, float SD){
+    stringstream ss;
+    cout << "#items    Average    SD" << endl;
+    cout << "------------------------------" << endl;
+    cout<<size;
+    cout<<fixed<<right<<setw(14)<<setprecision(2)<<avg;
+    cout<<right<<setw(10)<<setprecision(2)<<SD<<endl;
 }
