@@ -1,0 +1,45 @@
+@startuml show empty members
+'show [<<stereotype>> or alias] [empty members,members,empty attributes,attributes,empty methods,methods,circle,stereotype,class,interface,enum]
+class Triangle {
+    - side_a:double
+    - side_b:double
+    - side_c:double
+    __
+    + get_area():double
+}
+
+class Course {
+    - title:string
+    - number:int
+    - credits:int
+    - grade:string
+}
+
+class Student {
+    - number:int
+    - name:string
+    - major:string
+    - taking_courses:Courses[]
+    __
+    + get_GPA():double
+}
+class Movie {
+    - title:int
+    - director:string
+    - first_actors:string[]
+    - year:int
+    - genre:string
+    __
+}
+class Car {
+    - name:string
+    - model:string
+    - made:string
+    - color:string
+    - speed:double = 0
+    __
+    + increase_speed(this.speed):void
+    + decrease_speed(this.speed):void
+    + check_speed(this.speed):void
+}
+@enduml

@@ -3,3 +3,4 @@
 *.plist
 settings.json
 a
+*dSYM/
