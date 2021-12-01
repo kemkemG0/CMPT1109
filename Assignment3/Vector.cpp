@@ -1,32 +1,33 @@
 #include<iostream>
-#include"myvector.h"
+#include"Vector.h"
 
 
-myVector::myVector(){
+
+Vector::Vector(){
     _init();
     _reserve(_DEFAULT_CAPACITY);
 }
 
 
-myVector::myVector(int capa){
+Vector::Vector(size_t capa){
     _init();
     _reserve(capa);
 }
 
 
-myVector::~myVector(){
+Vector::~Vector(){
     delete[] _begin;
     _begin = nullptr;
 }
 
 
-void myVector::_init(){
+void Vector::_init(){
     _begin = nullptr;
     _size = _capacity = 0;
 }
 
 
-void myVector::_reserve(int capa){
+void Vector::_reserve(size_t capa){
     // if capacity is enough return;
     if(capa <= capacity()) return;
 
@@ -48,22 +49,22 @@ void myVector::_reserve(int capa){
 }
 
 
-int myVector::size(){return _size;}
+size_t Vector::size(){return _size;}
 
 
-int myVector::get(int ind){
+int Vector::get(size_t ind){
     assert(ind<size());// Notice: <
     return *(begin() + ind);
 }
 
 
-void myVector::set(int ind, int val){
+void Vector::set(size_t ind, int val){
     assert(ind<=size());// Notice: <=
     *(begin() + ind) = val;
 }
 
 
-void myVector::pop(){
+void Vector::pop(){
     if(size()){
         _size--;
     }else{
@@ -74,7 +75,7 @@ void myVector::pop(){
 }
 
 
-void myVector::push(int val){
+void Vector::push(int val){
     if(capacity()==size()) {
         _reserve(capacity()*2);
     }

@@ -1,5 +1,5 @@
 #include<iostream>
-#include"myvector.h"
+#include"Vector.h"
 #define REP(i,n) for(ll i=0;i<ll(n);i++)
 #define INF 1e9
 
@@ -10,7 +10,7 @@ size_t minIndex(const int* v,const size_t size, const unsigned pos);
 void selectionSort(int* v,size_t size, size_t pos);
 
 int main(){
-	auto a = myVector();
+	auto a = Vector();
 	REP(i,22)a.push(i);
 	REP(i,a.size()) cout<<a.get(i)<<" ";
 	cout<<endl;
