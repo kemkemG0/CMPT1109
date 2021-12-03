@@ -36,8 +36,9 @@ void input(string& bin,string& hexa){
 
 void test_hex2Dec(string hexa){
     try{
+        int dec = hex2Dec(hexa);
         cout<<"("<<hexa<<")16 ==";
-        cout<<"("<<hex2Dec(hexa)<<")10"<<endl;
+        cout<<"("<<dec<<")10"<<endl;
     }catch(const char c){
         cout<<"Error: ";
         cout<<c<<" is not a valid Hexa number."<<endl;
@@ -47,11 +48,12 @@ void test_hex2Dec(string hexa){
 
 void test_bin2Dec(string bin){
     try{
+        int dec = binToDecimal(bin);
         cout<<"("<<bin<<")2 ==";
-        cout<<"("<<binToDecimal(bin)<<")10"<<endl;
+        cout<<"("<<bin<<")10"<<endl;
     }catch(const char c){
         cout<<"Error: ";
-        cout<<c<<" is not a valid Hexa number."<<endl;
+        cout<<c<<" is not a valid Binary number."<<endl;
     }
 }
 
