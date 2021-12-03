@@ -2,30 +2,36 @@
 #include<cmath>
 using namespace std;
 
+// prototype
 int binToDecimal(const string& binaryString);
 int hex2Dec(const string& hexaString);
-
-bool is_hex(char c){return ('0'<=c && c<='9') || ('A'<=c && c<='F');}
-bool is_bin(char c){return c=='0' || c=='1';}
 void test_hex2Dec(string hexa);
 void test_bin2Dec(string hexa);
-
+void input(string& bin,string& hexa);
+// Definition of helper functions
+bool is_hex(char c){return ('0'<=c && c<='9') || ('A'<=c && c<='F');}
+bool is_bin(char c){return c=='0' || c=='1';}
 
 int main(){
     string bin,hexa;
+    
+    input(bin,hexa);
+    test_bin2Dec(bin);
+    test_hex2Dec(hexa);
+
+    return 0;
+}
+
+//Definition
+void input(string& bin,string& hexa){
     cout<<"Input a binary number: ";
     cin>>bin;
     cout<<endl;
     cout<<"Input a hexa number: ";
     cin>>hexa;
     cout<<endl;
-
-    test_bin2Dec(bin);
-
-    test_hex2Dec(hexa);
-
-    return 0;
 }
+
 
 
 void test_hex2Dec(string hexa){
