@@ -13,6 +13,7 @@ public:
     ~Vector();
     
     int* begin(){return _begin;}
+    int* back(){return begin()+size()-1;}
 
     size_t capacity(){return _capacity;}
     void push(int);
