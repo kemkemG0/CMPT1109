@@ -13,10 +13,9 @@ public:
     Vector(size_t);
     ~Vector();
     
-    int* begin(){return _begin;}
-    int* back(){return begin()+size()-1;}
+    int* begin();
 
-    size_t capacity(){return _capacity;}
+    size_t capacity();
     void push(int);
     size_t size();
     void pop();

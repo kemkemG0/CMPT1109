@@ -11,6 +11,14 @@ size_t minIndex(const int* v,const size_t size, const size_t pos);
 void selectionSort(int* v,size_t size, size_t pos);
 void testVector();
 void testSelectionSort();
+void printVector(Vector &v){
+	REP(i,v.size())cout<<v.get(i)<<" ";
+	cout<<endl;
+}
+void printVectorInfo(Vector &v){
+	cout<<"Capacity: "<< v.capacity()<<endl;
+	cout<<"Size: "<<v.size()<<endl;
+}
 
 int main(){
 	testSelectionSort();
@@ -39,19 +47,31 @@ void selectionSort(int* v,size_t size, size_t pos=0){
 void testVector(){
 	cout<<"!!! Test Vector !!!"<<endl;
 	Vector a;// with default constructor
+	printVectorInfo(a);
 	cout<<"Push from 0-24, set(5,999) and pop() 3 times"<<endl;
 	REP(i,25) a.push(i);
 	a.set(5,999);
-	a.pop(); a.pop(); a.pop();
 
-	REP(i,a.size()) cout<<a.get(i)<<" ";
+	printVectorInfo(a);
+	printVector(a);
 	cout<<endl<<endl;
 
-	cout<<"Pop untill size()==0 and try get(0)"<<endl;
-	
+	try{
+		cout<<"Try set(50,100)"<<endl;
+		a.set(50,100);// out of index
+	}catch(exception& e){
+		cout<<"ERROR:";
+		cout<<e.what()<<endl<<endl;
+	}
+
 	while(a.size()) a.pop();
-	cout<<a.get(0)<<endl;// out of index
-	cout<<endl;
+	try{
+		cout<<"Pop untill size()==0 and try get(0)"<<endl;
+		cout<<a.get(0)<<endl;// out of index
+	}catch(exception& e){
+		cout<<"ERROR:";
+		cout<<e.what()<<endl<<endl;
+	}
 	
 }
 

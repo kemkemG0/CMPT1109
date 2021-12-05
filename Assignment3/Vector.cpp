@@ -27,13 +27,18 @@ void Vector::_init(){
 }
 
 
+int* Vector::begin(){return _begin;}
+
+
+size_t Vector::capacity(){return _capacity;}
+
+
 void Vector::_reserve(size_t capa){
     // if capacity is enough return;
     if(capa <= capacity()) return;
 
     //Allocate memory and copy current values
     int* old_begin = begin();
-    int old_capacity = capacity();
     _begin  = new int[capa];
     _capacity = capa;
     // If this is called in constructor, no need to copy
