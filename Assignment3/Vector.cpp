@@ -49,37 +49,37 @@ void Vector::_reserve(size_t capa){
 }
 
 
+std::invalid_argument Vector:: _throw_out_of_range(size_t ind){
+    const std::string error_msg = 
+        std::to_string(ind) + " >= size()";
+    throw std::out_of_range(error_msg);
+}
+
+
 size_t Vector::size(){return _size;}
 
-
 int Vector::get(size_t ind){
-    assert(ind<size());// Notice: <
+    if(ind>=size()) _throw_out_of_range(ind);
     return *(begin() + ind);
 }
 
 
 void Vector::set(size_t ind, int val){
-    assert(ind<=size());// Notice: <=
+    if(ind>=size()) _throw_out_of_range(ind);
     *(begin() + ind) = val;
+    return;
 }
 
 
 void Vector::pop(){
-    if(size()){
-        _size--;
-    }else{
-        std::cout<<size()<<std::endl;
-        std::cout<<"EMPTY!!!"<<std::endl;
-    }
+    if(size()) _size--;
     return;
 }
 
 
 void Vector::push(int val){
-    if(capacity()==size()) {
-        _reserve(capacity()*2);
-    }
-    set(size(),val);
+    if(capacity()==size()) _reserve(capacity()*2);
+    *(begin() + size())=val;
     _size++;
     return;
 }

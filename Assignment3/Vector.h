@@ -6,6 +6,7 @@ private:
     size_t _capacity;
     void _reserve(size_t);
     void _init();
+    std::invalid_argument _throw_out_of_range(size_t);
 
 public:
     Vector();

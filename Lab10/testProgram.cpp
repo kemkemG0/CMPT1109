@@ -1,3 +1,7 @@
+// Kenshin Tanaka(300350728)
+// Pedro Chen 300350054
+// Gina Choi (300346654)
+
 #include<iostream>
 #include<cmath>
 using namespace std;
