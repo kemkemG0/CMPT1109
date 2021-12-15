@@ -38,13 +38,13 @@ class Password{
 
         // Returns true if the given value is the same as the value of object, 
         // otherwise, it returns false [2 marks]
-        bool confirm(string & givenValue); 
+        bool confirm(const string & givenValue); 
 
         // Returns true if the value is a valid password according to description 
         // of the question, and in this case the errorMessage is an empty string 
         // like "". Otherwise, it returns false and set and returns errorMessage 
         // with an appropriate message. [10 marks]
-        bool isValid(string & value, string & errorMessage); 
+        bool isValid(const string & value, string & errorMessage); 
         
         // You can add more functions if you want to have more modularized code,
         // specially to check all the criteria for a valid password

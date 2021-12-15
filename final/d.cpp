@@ -11,9 +11,9 @@ int getFrequencyData(string filename, int frequencies []);
 void displayFrequencies(int frequencies [], int size);
 
 int main(){
-    int fff[100]={};
-    int sz = getFrequencyData("f.txt",fff);
-    displayFrequencies(fff,sz);
+    int frq_list[MAX_AGE + 1]={};
+    int sz = getFrequencyData("age.txt",frq_list);
+    displayFrequencies(frq_list,sz);
     return 0;
 }
 

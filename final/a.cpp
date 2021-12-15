@@ -5,6 +5,7 @@ using namespace std;
 
 int countEvens(const int *list, int size){
     if(!size) return 0;
+    // (first letter) + others
     return !(list[0]%2) + countEvens(list+1,size-1);
 }
 

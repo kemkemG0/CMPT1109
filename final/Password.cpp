@@ -66,9 +66,9 @@ void Password::update(string & newValue){
     value = newValue;
 }
 
-bool Password::confirm(string & givenValue){ return givenValue == value;}
+bool Password::confirm(const string & givenValue){ return givenValue == value;}
 
-bool Password::isValid(string & value, string & errorMessage){
+bool Password::isValid(const string & value, string & errorMessage){
     try{
         is_length_over_8(value);
         has_over_2_lower_case(value);
