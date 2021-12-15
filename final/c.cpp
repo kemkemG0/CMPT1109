@@ -25,7 +25,9 @@ using namespace std;
 /*.....................DEFINE FUNCTIONS ......................*/
 
 void test(int a[]){
-    a = {100,200,300,4,5};
+    int* b = new int[100];
+    a = b;
+    REP(i,30)a[i]=100;
     // a = bb;
 }
 
@@ -33,8 +35,11 @@ void test(int a[]){
 signed main() {
     __MAGIC__
     
-    int aaa[] = {1,2,3,4};
+    int aaa[10];
+    auto f = &aaa;
     test(aaa);
+    auto e = &aaa;
+    cout<<(f==e)<<endl;
     cout<<aaa[0]<<endl;
     
     
